@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --navy-950: #070B16;
+    --navy-900: #0B1325;
+    --navy-850: #0E1A33;
+    --navy-800: #142344;
+    --navy-700: #1E3462;
+    --coffee-900: #24140E;
+    --coffee-800: #3E2723;
+    --coffee-700: #5D4037;
+    --gold-400: #DFBA6A;
+    --gold-500: #C5A059;
+    --gold-600: #A6813B;
+    --cream-50: #FFFDF9;
+    --cream-100: #FFF8EE;
+    --cream-200: #F4E8DB;
+    --cream-300: #E5D5C4;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #0B1325;
+    color: #FFF8EE;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-display {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+/* Custom scrollbar for sleek cafe UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B1325;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E3462;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A059;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(14, 26, 51, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 160, 89, 0.18);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-subtle {
+  background: rgba(11, 19, 37, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 248, 238, 0.08);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(20, 35, 68, 0.65) 0%, rgba(11, 19, 37, 0.85) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 160, 89, 0.15);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(197, 160, 89, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 25px rgba(197, 160, 89, 0.15);
+}
+
+/* Golden text and glows */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FFF8EE 20%, #E8D8C8 50%, #C5A059 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-glow {
+  text-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+}
+
+/* Cinematic vignettes and lighting overlays */
+.vignette-overlay {
+  background: radial-gradient(circle at center, transparent 40%, rgba(7, 11, 22, 0.75) 100%);
+  pointer-events: none;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
